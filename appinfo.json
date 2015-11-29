@@ -1,0 +1,40 @@
+{
+    "appKeys": {
+        "KEY_CC": 5,
+        "KEY_GD": 4,
+        "KEY_GW": 0,
+        "KEY_KK": 2,
+        "KEY_LL": 3,
+        "KEY_LON": 7,
+        "KEY_PH": 6,
+        "KEY_SS": 1
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "mlb406@gmail.com",
+    "longName": "vat-map",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/uk-map.png",
+                "name": "IMAGE_MAP_BG",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "vat-map",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "1d76e1b0-b800-49f0-b3ed-6698c7cd7314",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
