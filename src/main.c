@@ -24,13 +24,13 @@ static void update_time() {
   time_t temp = time(NULL);
   struct tm *t = localtime(&temp);
   
-  char buffer[] = "00:00";
+  static char time_buffer[] = "00:00";
   if (clock_is_24h_style() == true) {
-    strftime(buffer, sizeof(buffer), "%H:%M", t);
+    strftime(time_buffer, sizeof(time_buffer), "%H:%M", t);
   } else {
-    strftime(buffer, sizeof(buffer), "%H:%M", t);
+    strftime(time_buffer, sizeof(time_buffer), "%H:%M", t);
   }
-  text_layer_set_text(time_layer, buffer);
+  text_layer_set_text(time_layer, time_buffer);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -185,8 +185,8 @@ static void airports_create_proc(Layer *layer, GContext *ctx) {
     graphics_fill_circle(ctx, PH, 1);
   }
   
-  char lon_buffer[256];
-  char buffer[256];
+  static char lon_buffer[256];
+  static char buffer[256];
   
   if (persist_read_string(KEY_LON, lon_buffer, sizeof(lon_buffer)) != 0) {
     persist_read_string(KEY_LON, lon_buffer, sizeof(lon_buffer));
