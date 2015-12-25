@@ -187,10 +187,13 @@ static void airports_create_proc(Layer *layer, GContext *ctx) {
   
   static char lon_buffer[256];
   static char buffer[256];
-  
-  if (persist_read_string(KEY_LON, lon_buffer, sizeof(lon_buffer)) != 0) {
+  persist_read_string(KEY_LON, lon_buffer, sizeof(lon_buffer));
+  if (strcmp(lon_buffer, "") != 0) {
     persist_read_string(KEY_LON, lon_buffer, sizeof(lon_buffer));
     strcpy(buffer, "LON: ");
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "%s", buffer);
+    APP_LOG(APP_LOG_LEVEL_DEBUG_VERBOSE, "%s", buffer);
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "%s", lon_buffer);
     strcat(buffer, lon_buffer);
     text_layer_set_text(lon_layer, buffer);
   }

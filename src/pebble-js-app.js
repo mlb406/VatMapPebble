@@ -26,6 +26,7 @@ function getOnline() {
       var station = ((data[i].callsign).split("_"))[0];
       var loc = ((data[i].callsign).split("_"))[1];
       var pos = ((data[i].callsign).split("_"))[(((data[i].callsign).split("_")).length)-1];
+      console.log(call);
       
       // stations available
       // GW SS KK LL GD CC PH
@@ -95,7 +96,7 @@ function getOnline() {
         LON.concat("BB,");
       }
     }
-    
+    console.log(LON);
     var dict = {
       "KEY_GW": GW,
       "KEY_SS": SS,
